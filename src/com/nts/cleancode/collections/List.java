@@ -21,7 +21,7 @@ public class List extends AbstractCollection {
         Object[] newElements =
                 new Object[elements.length + 10];
         for (int i = 0; i < size; i++)
-            newElements[i] = elements[i];
+            newElements[i] = getElementAt(i);
         elements = newElements;
     }
 
@@ -31,7 +31,7 @@ public class List extends AbstractCollection {
 
     public boolean contains(Object element) {
         for (int i = 0; i < size; i++)
-            if (elements[i].equals(element))
+            if (getElementAt(i).equals(element))
                 return true;
         return false;
     }
@@ -41,23 +41,19 @@ public class List extends AbstractCollection {
             return false;
         else
             for (int i = 0; i < size; i++)
-                if (elements[i].equals(element)) {
+                if (getElementAt(i).equals(element)) {
                     elements[i] = null;
                     Object[] newElements = new Object[size - 1];
                     int k = 0;
                     for (int j = 0; j < size; j++) {
-                        if (elements[j] != null)
-                            newElements[k++] = elements[j];
+                        if (getElementAt(j) != null)
+                            newElements[k++] = getElementAt(j);
                     }
                     size--;
                     elements = newElements;
                     return true;
                 }
         return false;
-    }
-
-    public Object getElementAt(int i) {
-        return elements[i];
     }
 
     public int capacity() {

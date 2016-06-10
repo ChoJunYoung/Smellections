@@ -37,4 +37,7 @@ public abstract class AbstractCollection {
 		}
 	}
 
+	public Object getElementAt(int i) {
+        return elements[i];
+    }
 }
