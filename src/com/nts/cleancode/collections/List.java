@@ -11,6 +11,7 @@ public class List extends AbstractCollection {
 
         addElement(element);
 
+
     }
 
     protected void addElement(Object element) {
