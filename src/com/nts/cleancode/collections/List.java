@@ -56,7 +56,7 @@ public class List extends AbstractCollection {
         return false;
     }
 
-    public Object get(int i) {
+    public Object getElementAt(int i) {
         return elements[i];
     }
 
